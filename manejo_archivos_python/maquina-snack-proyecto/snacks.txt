@@ -1,0 +1,4 @@
+1,Papas,1.35
+2,Doritos,2
+3,Coca-cola,1
+4,Agua,0.8
