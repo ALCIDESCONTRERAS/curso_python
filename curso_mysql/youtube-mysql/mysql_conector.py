@@ -24,7 +24,7 @@ conection = mysql.connector.connect(
 
 # Estás dentro de un procedimiento almacenado y necesitas control más granular sobre los datos.
 cursor = conection.cursor()
-
+#--------------------------------------------------------------------------------------------------------------
 #CREAR TABLA
 # sql = '''CREATE TABLE clientes(nombre VARCHAR(100), direccion VARCHAR(200))'''
 
@@ -41,6 +41,7 @@ cursor = conection.cursor()
 # for table in cursor:
 #     print(table)
 
+#--------------------------------------------------------------------------------------------------------------
 #CREAR BASE DE DATOS
 #cursor.execute('CREATE DATABASE computadoras')
 
@@ -51,7 +52,7 @@ cursor = conection.cursor()
 # for bd in cursor:
 #     print(bd)
 
-
+#----------------------------------------------------------------------------------------------
 #ENVIAR UN DATO A UNA TABLA
 # sql = 'INSERT INTO clientes (nombre, direccion) VALUES (%s, %s)'
 # values = ('Maria', 'Barcelona. España')
@@ -59,18 +60,49 @@ cursor = conection.cursor()
 #print(cursor.rowcount, 'registro insertado')
 
 #ENVIAR VARIOS DATOS A UNA TABLA
-insertar_varios = 'INSERT INTO clientes (nombre, direccion) VALUES (%s, %s)'
-values = [('Pedro', 'Madrid'),
-          ('Roberto', 'Valencia'),
-          ('Facundo', 'Valencia'),
-          ('Miguel', 'Asturias')]
-cursor.executemany(insertar_varios, values)
-
-
-print(cursor.rowcount, 'registro insertado')
+# insertar_varios = 'INSERT INTO clientes (nombre, direccion) VALUES (%s, %s)'
+# values = [('Pedro', 'Madrid'),
+#           ('Roberto', 'Valencia'),
+#           ('Facundo', 'Valencia'),
+#           ('Miguel', 'Asturias')]
+# cursor.executemany(insertar_varios, values)
+#print(cursor.rowcount, 'registro insertado')
 #cursor.lastrowid para saber el último id que se ingresó
 
+#------------------------------------------------------------------------------------------------
+#traer toda la informacion
+# seleccionar_info = 'SELECT * FROM clientes'
+# cursor.execute(seleccionar_info)
+
+#TRAER INFORMACION ESPECIFICA
+# seleccionar_especifico = 'SELECT id, nombre FROM clientes'
+# cursor.execute(seleccionar_especifico)
+
+# clientes = cursor.fetchone()
+
+# for cliente in clientes:
+#     print(cliente)
+
 #GUARDAR LOS CAMBIOS
-conection.commit()
+#conection.commit()
+
+#------------------------------------------------------------------------------------------------------
+#TRAER INFORMACION ESPECIFICA CON FILTER
+# sql = 'SELECT * FROM clientes WHERE nombre = "Pedro" '
+# cursor.execute(sql)
+
+#LIKE ES PARECIDO, CON EL PORCENTAJE DA IGUAL LO QUE HAY DESPUES
+# sql = 'SELECT * FROM clientes WHERE nombre LIKE "M%"'
+# cursor.execute(sql)
+
+# %LETRA% ES PARA QUE DEVUELVA TODO LO QUE CONTENGA ESA LETRA O PALABRA
+sql = 'SELECT * FROM clientes WHERE nombre LIKE "%e%"'
+cursor.execute(sql)
+
+
+clientes = cursor.fetchall()
+
+for cliente in clientes:
+    print(cliente)
 
 conection.close()
