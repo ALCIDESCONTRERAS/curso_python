@@ -96,7 +96,7 @@ cursor = conection.cursor()
 # cursor.execute(sql)
 
 # %LETRA% ES PARA QUE DEVUELVA TODO LO QUE CONTENGA ESA LETRA O PALABRA
-sql = 'SELECT * FROM clientes WHERE nombre LIKE "%e%"'
+sql = 'SELECT * FROM clientes WHERE nombre LIKE "%c%"'
 cursor.execute(sql)
 
 
