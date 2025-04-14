@@ -52,7 +52,7 @@ cursor = conection.cursor()
 # for bd in cursor:
 #     print(bd)
 
-#----------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 #ENVIAR UN DATO A UNA TABLA
 # sql = 'INSERT INTO clientes (nombre, direccion) VALUES (%s, %s)'
 # values = ('Maria', 'Barcelona. España')
@@ -69,7 +69,7 @@ cursor = conection.cursor()
 #print(cursor.rowcount, 'registro insertado')
 #cursor.lastrowid para saber el último id que se ingresó
 
-#------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------
 #traer toda la informacion
 # seleccionar_info = 'SELECT * FROM clientes'
 # cursor.execute(seleccionar_info)
@@ -86,7 +86,7 @@ cursor = conection.cursor()
 #GUARDAR LOS CAMBIOS
 #conection.commit()
 
-#------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------
 #TRAER INFORMACION ESPECIFICA CON FILTER
 # sql = 'SELECT * FROM clientes WHERE nombre = "Pedro" '
 # cursor.execute(sql)
@@ -95,14 +95,27 @@ cursor = conection.cursor()
 # sql = 'SELECT * FROM clientes WHERE nombre LIKE "M%"'
 # cursor.execute(sql)
 
-# %LETRA% ES PARA QUE DEVUELVA TODO LO QUE CONTENGA ESA LETRA O PALABRA
-sql = 'SELECT * FROM clientes WHERE nombre LIKE "%c%"'
-cursor.execute(sql)
+# %LETRA/S% ES PARA QUE DEVUELVA TODO LO QUE CONTENGA ESA LETRA O PALABRA
+# sql = 'SELECT * FROM clientes WHERE nombre LIKE "%c%"'
+# cursor.execute(sql)
 
 
-clientes = cursor.fetchall()
+# clientes = cursor.fetchall()
 
-for cliente in clientes:
-    print(cliente)
+# for cliente in clientes:
+#     print(cliente)
+
+
+#ORDERNAR BUSQUEDAS
+# sql = 'SELECT * FROM clientes ORDER BY direccion DESC'
+# cursor.execute(sql)
+
+
+# datos = cursor.fetchall()
+
+# for dato in datos:
+#     print(dato)
+
+
 
 conection.close()
