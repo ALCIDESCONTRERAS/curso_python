@@ -1,0 +1,3 @@
+id: 1, Nombre: Patri, Telefono: 85828582, Email: patri@gmail.com
+id: 1, Nombre: Alcides, Telefono: 675304234, Email: alci@gmail.com
+id: 1, Nombre: Lili, Telefono: 675895654, Email: lili@gmail.com
