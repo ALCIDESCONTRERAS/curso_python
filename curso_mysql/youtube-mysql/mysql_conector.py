@@ -116,6 +116,69 @@ cursor = conection.cursor()
 # for dato in datos:
 #     print(dato)
 
+# sql = 'DELETE FROM clientes WHERE direccion = "Asturias"'
+
+# cursor.execute(sql)
+
+# lista = 'SELECT * FROM clientes '
+# cursor.execute(lista)
+
+# clientes = cursor.fetchall()
+
+# for cliente in clientes:
+#     print(cliente)
+    
+# conection.commit()
+
+#Actualizar datos de la tabla
+# sql = 'UPDATE clientes SET nombre = "Caballin" WHERE nombre= "Pedro"'
+# cursor.execute(sql)
+# conection.commit()
+
+# sql = 'SELECT * FROM clientes'
+# cursor.execute(sql)
+
+# clientes = cursor.fetchall()
+# for cliente in clientes:
+#     print(cliente)
+
+#LIMITAR BUSQUEDAS EN MYSQL
+#sql = 'SELECT * FROM clientes LIMIT 3'
+# sql = 'SELECT * FROM clientes LIMIT 3 OFFSET 2'
+
+# cursor.execute(sql)
+
+# clientes = cursor.fetchall()
+# for cliente in clientes:
+#     print(cliente)
+
+#BORRAR TABLAS EN MYSQL
+# sql = 'DROP TABLE empleados'
+# cursor.execute(sql)
+# conection.commit()
+
+
+# sql = 'SHOW TABLES'
+# cursor.execute(sql)
+
+# datos = cursor.fetchall()
+# for dato in datos:
+#     print(dato)
+
+
+#BORRAR BASE DE DATOS
+
+# sql = 'DROP DATABASE computadoras'
+# cursor.execute(sql)
+# conection.commit()
+
+
+sql = 'SHOW DATABASES'
+cursor.execute(sql)
+
+datos = cursor.fetchall()
+for dato in datos:
+    print(dato)
 
 
 conection.close()
