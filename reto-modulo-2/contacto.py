@@ -8,4 +8,4 @@ class Contacto:
         self.email = email
         
     def __str__(self):
-        return f'id: {self.id_contacto}, Nombre: {self.nombre}, Telefono: {self.telefono}, Email: {self.email}'
+        return f'{self.id_contacto},{self.nombre},{self.telefono},{self.email}'
