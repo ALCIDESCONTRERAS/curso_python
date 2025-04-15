@@ -110,7 +110,7 @@ class OperacionesContacto:
             print(f'Ocurrió un error al actualizar el contacto: {e}')
     
     def listar_contactos(self):
-        print('------Lista de Contactos--------')
+        print('------------------Lista de Contactos-----------------------')
         for contacto in self.contactos:
             print(f'Id: {contacto.id_contacto}, Nombre: {contacto.nombre}, Telefono: {contacto.telefono}, Email: {contacto.email}')
             
