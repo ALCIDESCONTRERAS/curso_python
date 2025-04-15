@@ -25,6 +25,8 @@ class AppContactos:
                     self.operaciones_contacto.actualizar_contacto()
                 elif opcion == 4:
                     self.operaciones_contacto.eliminar_contacto()
+                else:
+                    print('Elije una opcion entre el 1 y 5')
             else:
                 print('Vuelve pronto!!!')
         except ValueError:

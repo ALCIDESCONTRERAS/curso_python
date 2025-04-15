@@ -64,7 +64,7 @@ class OperacionesContacto:
                 with open(self.archivo_contacto, 'w', encoding='utf8') as archivo:
                     for contacto in self.contactos:
                         archivo.write(f'{contacto}\n')
-                print('Contacto con el id {e} eliminado correctamente!!!')
+                print(f'Contacto con el id {id_usuario} eliminado correctamente!!!')
             else:
                 print(f'No se encontró el contacto con el id {id_usuario}')            
         except ValueError:
