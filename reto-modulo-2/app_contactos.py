@@ -7,14 +7,15 @@ class AppContactos:
     def ejecutar_opciones(self):
         opcion = None
         try:
-            while opcion != 5:
+            while opcion != 6:
                 print('------------Menú de opciones para la gestión de contactos----------')
                 print('''Menú:
                     1. Mostrar contactos
                     2. Crear contactos
                     3. Actualizar contactos
                     4. Eliminar contactos
-                    5. Salir''')
+                    5. Buscar contacto
+                    6. Salir''')
                 opcion = int(input('Escibe una opción (1-5): '))
                 
                 if opcion == 1:
@@ -25,8 +26,10 @@ class AppContactos:
                     self.operaciones_contacto.actualizar_contacto()
                 elif opcion == 4:
                     self.operaciones_contacto.eliminar_contacto()
+                elif opcion == 5:
+                    self.operaciones_contacto.buscar_contactos()
                 else:
-                    print('Elije una opcion entre el 1 y 5')
+                    print('Elije una opcion entre el 1 y 6')
             else:
                 print('Vuelve pronto!!!')
         except ValueError:

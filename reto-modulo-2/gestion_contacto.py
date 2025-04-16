@@ -56,20 +56,69 @@ class OperacionesContacto:
                                 
             for contacto in self.contactos:
                 if contacto.id_contacto == id_usuario:
+                    print(f'Id: {contacto.id_contacto}, Nombre: {contacto.nombre}, Telefono: {contacto.telefono}, Email: {contacto.email}')
                     contacto_encontrado = contacto
                     
             if contacto_encontrado:
-                self.contactos.remove(contacto_encontrado)
-                with open(self.archivo_contacto, 'w', encoding='utf8') as archivo:
-                    for contacto in self.contactos:
-                        archivo.write(f'{contacto}\n')
-                print(f'Contacto con el id {id_usuario} eliminado correctamente!!!')
+                while True:
+                    confirmar = input('¿Estás seguro que quieres eliminar el contacto? (y-n): ').lower()
+                    
+                    if confirmar == "y":
+                        self.contactos.remove(contacto_encontrado)
+                        with open(self.archivo_contacto, 'w', encoding='utf8') as archivo:
+                            for contacto in self.contactos:
+                                archivo.write(f'{contacto}\n')
+                        print(f'Contacto con el id {id_usuario} eliminado correctamente!!!')
+                        break
+                    elif confirmar == "n":
+                        print('No se eliminó el contacto')
+                        break
+                    else:
+                        print('elije una opción correcta (y or n)')
             else:
                 print(f'No se encontró el contacto con el id {id_usuario}')            
         except ValueError:
             print(f'Escriba un número válido')
         except Exception as e:
-            print(f'Ocurrió un error al eliminar el contacto: {e}')
+            print(f'Ocurrió un error al eliminar el contacto: {e}')    
+              
+    # --------------------------------Metodo Facundo ---------------------------------------------
+    # contacto_a_eliminar = input('Introduce el nombre del contacto a eliminar: ')
+    #         try:
+    #             with open(self.nombre_archivo, 'r') as archivo:
+    #                 lineas = archivo.readlines()
+    
+    #             with open(self.nombre_archivo, 'w') as archivo:
+    #                 for linea in lineas:
+    #                     if contacto_a_eliminar not in linea:
+    #                         archivo.write(linea)
+    #                 print('***--- Contacto eliminado ---***')
+    #                 print(f'Se ha eliminado el contacto: {contacto_a_eliminar}')
+    #         except Exception as e:
+    #             print(f'Ha ocurrido un error: {e}')
+    
+    
+    #-----------------------------------Metodo Roberto----------------------------------------------
+    #         try:
+    #             eliminar_contacto = input('Introduce el nombre del contacto que quieres eliminar: ')
+    #             nuevos_contactos = []
+    #             eliminado = False
+    #             for contacto in self.contactos:
+    #                 if eliminar_contacto not in contacto.nombre.lower():
+    #                     nuevos_contactos.append(contacto)
+    #                 else:
+    #                     eliminado = True
+    #             if eliminado:
+    #                 with open(self.nombre_archivo, 'w') as archivo:
+    #                     for contacto in nuevos_contactos:
+    #                         archivo.write(f'{contacto.id},{contacto.nombre},{contacto.telefono},{contacto.email}\n')
+    #                 self.contactos = nuevos_contactos
+    #                 print(f'Contacto Eliminado')
+    #             else:
+    #                 print('No se encontro el contacto')
+    #         except Exception as e:
+    #             print(f'Error al eliminar contacto: {e}')
+        
                   
     def actualizar_contacto(self):
         try:
@@ -100,8 +149,7 @@ class OperacionesContacto:
                 
             else:
                 print(f'Contacto con id {id_usuario} no se encontró')
-                
-                
+                     
         except ValueError:
             print(f'Escriba un número válido')
         except Exception as e:
@@ -134,4 +182,4 @@ class OperacionesContacto:
         
 if __name__ == '__main__':
     operacion = OperacionesContacto()
-    operacion.buscar_contactos()
+    operacion.eliminar_contacto()
