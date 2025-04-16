@@ -48,8 +48,7 @@ class OperacionesContacto:
             print("Contacto Agregado!!!")
         except Exception as e:
             print(f'Ocurrió un error al crear contacto: {e}')
-            
-            
+                     
     def eliminar_contacto(self):
         try:
             id_usuario = int(input('Escribe el id del contacto: '))
@@ -71,8 +70,7 @@ class OperacionesContacto:
             print(f'Escriba un número válido')
         except Exception as e:
             print(f'Ocurrió un error al eliminar el contacto: {e}')
-            
-            
+                  
     def actualizar_contacto(self):
         try:
             id_usuario = int(input('Escribe el id del contacto a actualizar: '))
@@ -108,6 +106,21 @@ class OperacionesContacto:
             print(f'Escriba un número válido')
         except Exception as e:
             print(f'Ocurrió un error al actualizar el contacto: {e}')
+            
+    def buscar_contactos(self):
+        try:
+            nombre_usuario = input('Escribe el nombre el contacto: ').lower()
+            encontrado = False
+            
+            for contacto in self.contactos:
+                if nombre_usuario in contacto.nombre.lower():
+                    print(f'Id: {contacto.id_contacto}, Nombre: {contacto.nombre}, Telefono: {contacto.telefono}, Email: {contacto.email}')
+                    encontrado = True
+            if not encontrado:
+                print('Contacto no encontrado')
+                
+        except Exception as e:
+            print(f'Ocurrió un error a buscar contacto: {e}')
     
     def listar_contactos(self):
         print('------------------Lista de Contactos-----------------------')
@@ -117,3 +130,8 @@ class OperacionesContacto:
     def eliminar_archivo_contacto(self):
         os.remove(self.archivo_contacto)
         print("Archivo de contactos eliminado!!")
+        
+        
+if __name__ == '__main__':
+    operacion = OperacionesContacto()
+    operacion.buscar_contactos()
