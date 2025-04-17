@@ -178,8 +178,3 @@ class OperacionesContacto:
     def eliminar_archivo_contacto(self):
         os.remove(self.archivo_contacto)
         print("Archivo de contactos eliminado!!")
-        
-        
-if __name__ == '__main__':
-    operacion = OperacionesContacto()
-    operacion.eliminar_contacto()

@@ -16,6 +16,7 @@ class AppContactos:
                     4. Eliminar contactos
                     5. Buscar contacto
                     6. Salir''')
+                
                 opcion = int(input('Escibe una opción (1-5): '))
                 
                 if opcion == 1:
