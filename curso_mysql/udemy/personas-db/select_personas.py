@@ -1,4 +1,4 @@
-import mysql.connector   #incluir el modulo connector
+import mysql.connector  #incluir el modulo connector
 
 peronas_db = mysql.connector.connect(
     host="localhost", #127.0.0.1

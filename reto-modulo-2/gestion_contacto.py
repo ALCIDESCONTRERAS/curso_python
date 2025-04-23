@@ -74,7 +74,7 @@ class OperacionesContacto:
                         print('No se eliminó el contacto')
                         break
                     else:
-                        print('elije una opción correcta (y or n)')
+                        print('elige una opción correcta (y or n)')
             else:
                 print(f'No se encontró el contacto con el id {id_usuario}')            
         except ValueError:
