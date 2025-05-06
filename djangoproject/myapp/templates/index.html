@@ -1,9 +1,13 @@
 {% extends 'layouts/base.html' %}
 
+{% load static%}
 
 {% block content %}
 
 <h1>{{title}}</h1>
+
+<img src="{% static 'flecha.png' %}" alt="" width="70">
+
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni commodi ipsam non adipisci ex repudiandae illo voluptas corrupti ut. Excepturi doloremque fugiat veritatis adipisci quaerat minima cupiditate voluptatum illo voluptates.</p>
 
 {% endblock %}
