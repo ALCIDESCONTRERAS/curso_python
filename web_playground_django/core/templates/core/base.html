@@ -45,6 +45,9 @@
                   {% csrf_token %}
                   <button class="bg-transparent border-0 p-0 m-0 shadow-none nav-link" type="submit">{% translate "Salir" %}</input>
                 </form>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'profile' %}">Perfil</a>
+                </li>
               {% endif %}
             </ul>
           </div>
